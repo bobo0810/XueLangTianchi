@@ -9,3 +9,16 @@
 
 参赛地址：[雪浪制造AI挑战赛](https://tianchi.aliyun.com/competition/introduction.htm?spm=a2c22.11695015.1131732.1.4ea25275NNvZuf&raceId=231666) 
 
+ - 环境：
+
+    | python版本  |  pytorch版本 |
+    | ----------- | ----------   |
+    |  3.5  | 0.3.0   |
+
+ - 说明：
+
+   1、运行main.py请确保启动可视化工具visdom
+
+- 版本：
+
+   1、YOLO v1版（仅适用有xml标注的数据，效果极差）
