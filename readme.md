@@ -22,3 +22,9 @@
 - 版本：
 
    1、YOLO v1版（仅适用有xml标注的数据，效果不好）
+  
+  预训练模型：
+
+  [最新保存的模型](https://pan.baidu.com/s/1wv_30IjungQO5fp5b0bKow) 
+
+  [验证集最好的模型](https://pan.baidu.com/s/1mmgI78s5YUrMA9Y4RVM5yw) 
