@@ -31,20 +31,8 @@ def train(**kwargs):
     map_location = lambda storage, loc: storage
     if opt.load_model_path:
         netWork.load_state_dict(t.load(opt.load_model_path, map_location=map_location))
-
-
-    # # 加载多GPU模型
-    # pretained_model = t.load(opt.load_model_path)
-    # pretained_dict = pretained_model.module.state_dict()
-    # netWork.load_state_dict(pretained_dict)
-
-
-
-    # 将模型转到多GPU并行
     if opt.use_gpu:
-        netWork=t.nn.DataParallel(netWork,device_ids=[0,1])
         netWork.cuda()
-        cudnn.benchmark=True
 
     # step2: 加载数据
     train_data = XueLangDataSet(opt.data_root, train=True)
@@ -169,23 +157,16 @@ def train(**kwargs):
 
 
 def test(**kwargs):
-    #无需GPU并行
+
     print("开始测试")
     # 定义一个网络模型对象
     # 通过config文件中模型名称来加载模型,并调整为验证模式
     netWork = getattr(models, opt.model)().eval()
     print('当前测试使用的模型为'+opt.model)
-    # # 先将模型加载到内存中，即CPU中
-    # map_location = lambda storage, loc: storage
-    # if opt.load_model_path:
-    #     netWork.load_state_dict(t.load(opt.load_model_path, map_location=map_location))
-
-
-    # 加载多GPU模型
-    pretained_model = t.load(opt.load_model_path)
-    pretained_dict = pretained_model.module.state_dict()
-    netWork.load_state_dict(pretained_dict)
-
+    # 先将模型加载到内存中，即CPU中
+    map_location = lambda storage, loc: storage
+    if opt.load_model_path:
+        netWork.load_state_dict(t.load(opt.load_model_path, map_location=map_location))
 
     # 将模型转到GPU
     if opt.use_gpu:
