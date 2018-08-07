@@ -2,21 +2,6 @@
 
 - 参赛地址：[雪浪制造AI挑战赛](https://tianchi.aliyun.com/competition/introduction.htm?spm=a2c22.11695015.1131732.1.4ea25275NNvZuf&raceId=231666) 
 
-----------
-
- - 环境：
-
-    | python版本  |  pytorch版本 |
-    | ----------- | ----------   |
-    |  3.5  | 0.3.0   |
-
-
-
- - 说明：
-
-   1、运行main.py请确保启动可视化工具visdom
-
-   2、所有参数均在config.py中设置即可
 
 ----------
 
@@ -66,6 +51,22 @@
 
 ----------
 
+ - 环境：
+
+    | python版本  |  pytorch版本 |
+    | ----------- | ----------   |
+    |  3.5  | 0.3.0   |
+
+
+
+ - 说明：
+
+   1、运行main.py请确保启动可视化工具visdom
+
+   2、所有参数均在config.py中设置即可
+----------
+
+
 # 项目结构
 
 - 总结构
@@ -92,6 +93,7 @@
   ![](http://boboprivate.oss-cn-beijing.aliyuncs.com/18-5-26/32257225.jpg)
 
 ----------
+
 
   特别鸣谢：朱辉师兄
   
