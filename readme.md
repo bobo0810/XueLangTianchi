@@ -8,20 +8,20 @@
 # 版本
 
 
-  - ### xuelang (排名：32/2403)
+  - ## xuelang (排名：32/2403)
   
 <div align="center">
 <img src="http://boboprivate.oss-cn-beijing.aliyuncs.com/18-8-7/89764672.jpg" width="800px"  height="400px" alt="图片说明" >
 </div>
 
 
-  - ### XuelangYOLOv1ByBobo
+  - ## XuelangYOLOv1ByBobo
   
   预训练模型：（仅适用有xml标注的数据，效果不好）
 
  ###### 注： [最新模型](https://pan.baidu.com/s/1wv_30IjungQO5fp5b0bKow)    [验证集最好的模型](https://pan.baidu.com/s/1mmgI78s5YUrMA9Y4RVM5yw) 
 
- - ### Resnet152
+ - ## Resnet152
 
   支持网络模型：VGG16、VGG19、ResNet18、ResNet152（使用原图训练）
   
