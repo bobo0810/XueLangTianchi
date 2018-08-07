@@ -44,6 +44,8 @@ data
 └───xuelang_round1_test_b
 ```
 
+######  注：[训练集下载](https://pan.baidu.com/s/1Y1MspixgeQtXECXvcds6OA)
+
 - 训练使用的数据集
 
 生成的xuelangtrainpart123_dataset.txt 为训练时用的数据集，训练过程中当加载每张图时才进行随机裁剪。
@@ -101,13 +103,13 @@ python -m visdom.server
 
 下载[finaVal验证集](https://pan.baidu.com/s/13WEVsAvMp1fyQnZd6N15FA)，在code/utils/config.py中val_data_root属性配置好路径。
 
-######（注：该验证集与线上auc得分误差在[0.001-0.02]之间）
+###### （注：该验证集与线上auc得分误差在[0.001-0.02]之间）
 
 - 3、开始训练
 
 执行main.py中的训练部分即可，通过vidom查看损失情况及在验证集上的AUC分数。
 
-######（注：使用多GPU训练，运行时占用device0、1）
+###### （注：使用多GPU训练，运行时占用device0、1）
 
 ----------
 
@@ -117,7 +119,7 @@ python -m visdom.server
 
 在code/utils/config.py中给load_model_path属性配置 最终模型的路径。
 
-###### [auc为0.929的模型下载](https://pan.baidu.com/s/1pmSAS85Gjc9b5SCXPMmppw)
+######  [auc为0.929的模型下载](https://pan.baidu.com/s/1pmSAS85Gjc9b5SCXPMmppw)
 
 - 2、配置测试集
 
