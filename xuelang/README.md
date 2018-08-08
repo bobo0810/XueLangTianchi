@@ -52,18 +52,22 @@ data
 
 将官方数据集分为两部分：无瑕疵原图、有瑕疵原图。该数据集使用了一份无瑕疵原图、两份有瑕疵原图。
 
+###### （注：一份无瑕疵原图用于产生 无瑕疵训练样本，一份有瑕疵原图用于产生  无瑕疵训练样本，一份有瑕疵原图用于产生 有瑕疵训练样本。）
+
 ![](http://boboprivate.oss-cn-beijing.aliyuncs.com/18-8-7/7134271.jpg)
 
 从有瑕疵原图中产生有瑕疵训练样本分为四种情况：
 
-w、h<420时从橘色方块部分随机产生裁剪样本左上角坐标，宽高均为420。
+随机从该图中的所有bbox中抽取一个bbox。
+
+当抽取的bbox的w、h<420时从橘色方块部分随机产生裁剪样本左上角坐标，宽高均为420。
 
 <div align="center">
 <img src="http://boboprivate.oss-cn-beijing.aliyuncs.com/18-8-7/87211553.jpg" width="600px" height="400px" alt="图片说明" >
 </div>
 
 
-w<420、h>420时从橘色方块部分随机产生裁剪样本左上角坐标，宽高均为420。
+当抽取的bbox的w<420、h>420时从橘色方块部分随机产生裁剪样本左上角坐标，宽高均为420。
 
 <div align="center">
 <img src="http://boboprivate.oss-cn-beijing.aliyuncs.com/18-8-7/53243672.jpg" width="600px" height="400px" alt="图片说明" >
@@ -71,13 +75,13 @@ w<420、h>420时从橘色方块部分随机产生裁剪样本左上角坐标，�
 
 
 
-w>420、h<420时从橘色方块部分随机产生裁剪样本左上角坐标，宽高均为420。
+当抽取的bbox的w>420、h<420时从橘色方块部分随机产生裁剪样本左上角坐标，宽高均为420。
 
 <div align="center">
 <img src="http://boboprivate.oss-cn-beijing.aliyuncs.com/18-8-7/22474338.jpg" width="600px" height="400px" alt="图片说明" >
 </div>
 
-w、h>420时 0.5概率使用原bbox，0.5概率在原bbox中随机裁剪420尺寸。
+当抽取的bbox的w、h>420时 0.5概率使用原bbox，0.5概率在原bbox中随机裁剪420尺寸。
 
 ###### （注：详细代码在XueLangDataSet文件中）
 
@@ -141,7 +145,9 @@ python -m visdom.server
 
    2、该项目输入尺寸为224，可增大尺寸训练。
 
-   3、...
+   3、该项目网络仅为Resnet152，前排大佬使用多模型融合，可试。
+
+   4、....
 
 ----------
 
