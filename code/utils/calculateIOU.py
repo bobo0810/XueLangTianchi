@@ -1,6 +1,7 @@
 
 class Judge_Much_IOU():
     # 现在通过计算iou的方法，来切出有瑕疵里面的无瑕疵区域
+	# 其中one_x, one_y，two_x, two_y 分别表示 两个矩形框的 中心点
     def calcIOU(self,one_x, one_y, one_w, one_h, two_x, two_y, two_w, two_h):
         if ((abs(one_x - two_x) < ((one_w + two_w) / 2.0)) and (abs(one_y - two_y) < ((one_h + two_h) / 2.0))):
             lu_x_inter = max((one_x - (one_w / 2.0)), (two_x - (two_w / 2.0)))
@@ -22,8 +23,8 @@ class Judge_Much_IOU():
             xmin_ ,ymin_ ,xmax_ ,ymax_ = onelist
             xmin_ ,ymin_ ,xmax_ ,ymax_ = int(xmin_) ,int(ymin_) ,int(xmax_) ,int(ymax_)
             xmin ,ymin ,xmax ,ymax = this_box_list
-            one_x, one_y, one_w, one_h = xmin_ ,ymin_ ,xmax_ - xmin_ ,ymax_ - ymin_
-            two_x, two_y, two_w, two_h = xmin, ymin, xmax-xmin, ymax-ymin
+            one_x, one_y, one_w, one_h = int((xmin_ + xmax_)/2),int((ymin_ + ymax_)/2),xmax_ - xmin_ ,ymax_ - ymin_
+            two_x, two_y, two_w, two_h = int((xmin + xmax)/2) ,int((ymin + ymax)/2), xmax-xmin, ymax-ymin
             result = self.calcIOU(one_x, one_y, one_w, one_h, two_x, two_y, two_w, two_h)
             if result is not 0:
                 return 0 # 表示有交叉，这样的不符合
