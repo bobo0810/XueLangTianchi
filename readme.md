@@ -56,7 +56,7 @@ data
 
 ###### （注：一份无瑕疵原图用于产生 无瑕疵训练样本，一份有瑕疵原图用于产生  无瑕疵训练样本，一份有瑕疵原图用于产生 有瑕疵训练样本。）
 
-![](http://boboprivate.oss-cn-beijing.aliyuncs.com/18-8-7/7134271.jpg)
+![](https://github.com/bobo0810/imageRepo/blob/master/img/7134271.jpg)
 
 从有瑕疵原图中产生有瑕疵训练样本分为四种情况：
 
@@ -65,14 +65,14 @@ data
 当抽取的bbox的w、h<420时从橘色方块部分随机产生裁剪样本左上角坐标，宽高均为420。
 
 <div align="center">
-<img src="http://boboprivate.oss-cn-beijing.aliyuncs.com/18-8-7/87211553.jpg" width="600px" height="400px" alt="图片说明" >
+<img src="https://github.com/bobo0810/imageRepo/blob/master/img/87211553.jpg" width="600px" height="400px" alt="图片说明" >
 </div>
 
 
 当抽取的bbox的w<420、h>420时从橘色方块部分随机产生裁剪样本左上角坐标，宽高均为420。
 
 <div align="center">
-<img src="http://boboprivate.oss-cn-beijing.aliyuncs.com/18-8-7/53243672.jpg" width="600px" height="400px" alt="图片说明" >
+<img src="https://github.com/bobo0810/imageRepo/blob/master/img/53243672.jpg" width="600px" height="400px" alt="图片说明" >
 </div>
 
 
@@ -80,7 +80,7 @@ data
 当抽取的bbox的w>420、h<420时从橘色方块部分随机产生裁剪样本左上角坐标，宽高均为420。
 
 <div align="center">
-<img src="http://boboprivate.oss-cn-beijing.aliyuncs.com/18-8-7/22474338.jpg" width="600px" height="400px" alt="图片说明" >
+<img src="https://github.com/bobo0810/imageRepo/blob/master/img/22474338.jpg" width="600px" height="400px" alt="图片说明" >
 </div>
 
 当抽取的bbox的w、h>420时 0.5概率使用原bbox，0.5概率在原bbox中随机裁剪420尺寸。
